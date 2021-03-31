@@ -33,13 +33,13 @@ def main():
     # front end elements of the web page 
     html_temp = """ 
     <div style ="background-color:orange;padding:20px;font-weight:15px"> 
-    <h1 style ="color:black;text-align:center;">Content Based Recommendation</h1> 
+    <h1 style ="color:black;text-align:center;"> Stories Clustering</h1> 
     </div> 
     """
     # display the front end aspect
     st.markdown(html_temp, unsafe_allow_html = True) 
     default_value_goes_here = ""
-    Content = st.text_area("label goes here", default_value_goes_here)
+    Content = st.text_area("Enter Text to be classified", default_value_goes_here)
     result =""
     
     
