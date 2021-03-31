@@ -35,10 +35,10 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html = True) 
     default_value_goes_here = ""
-    Content = st.text_area("label goes here", default_value_goes_here)
+    Content = st.text_area("Please Enter the text for prediction here", default_value_goes_here)
     result =""
     
-    
+    data= pd.read_csv('https://raw.githubusercontent.com/sorokolo/Stories_clustering/main/dataset.csv')
     data["label"] = label_enc.fit_transform(data[["label"]])  
       # when 'Predict' is clicked, make the prediction and store it 
     if st.button("Predict"): 
