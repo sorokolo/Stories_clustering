@@ -10,7 +10,7 @@ label_enc = LabelEncoder()
 tfid= pickle.load(open('Tfidfmodels.pkl','rb'))
 model=pickle.load(open('save.pkl','rb'))
 
-data= pd.read_csv('dataset.csv')
+data= pd.read_csv('https://raw.githubusercontent.com/sorokolo/Stories_clustering/main/dataset.csv')
 @st.cache()
 
   
