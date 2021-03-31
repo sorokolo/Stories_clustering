@@ -11,7 +11,7 @@ label_enc = LabelEncoder()
 tfid= pickle.load(open('Tfidfmodels.pkl','rb'))
 model=pickle.load(open('save.pkl','rb'))
 
-data= pd.read_csv('https://raw.githubusercontent.com/makantr17/link_prediction/main/cleanDoc.csv')
+data= pd.read_csv('https://raw.githubusercontent.com/sorokolo/Stories_clustering/main/dataset.csv')
 @st.cache()
 
   
@@ -44,7 +44,7 @@ def main():
     
     
     # Display links
-    data= pd.read_csv('https://raw.githubusercontent.com/makantr17/link_prediction/main/cleanDoc.csv')
+    data= pd.read_csv('https://raw.githubusercontent.com/sorokolo/Stories_clustering/main/dataset.csv')
     data["label"] = label_enc.fit_transform(data[["label"]])  
       # when 'Predict' is clicked, make the prediction and store it 
     if st.button("Predict"): 
