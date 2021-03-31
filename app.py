@@ -7,15 +7,13 @@ from sklearn.cluster import KMeans
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 label_enc = LabelEncoder()
-# loading the trained model
 tfid= pickle.load(open('Tfidfmodels.pkl','rb'))
 model=pickle.load(open('save.pkl','rb'))
 
-data= pd.read_csv('https://raw.githubusercontent.com/makantr17/link_prediction/main/cleanDoc.csv')
+data= pd.read_csv('dataset.csv')
 @st.cache()
 
   
-# defining the function which will make the prediction using the data which the user inputs 
 def prediction(pred): 
     if pred == 0:
         pred = 'Sport'
@@ -28,7 +26,6 @@ def prediction(pred):
     return pred
       
   
-# this is the main function in which we define our webpage  
 def main():       
     # front end elements of the web page 
     html_temp = """ 
@@ -36,14 +33,12 @@ def main():
     <h1 style ="color:black;text-align:center;">Content Based Recommendation</h1> 
     </div> 
     """
-    # display the front end aspect
     st.markdown(html_temp, unsafe_allow_html = True) 
     default_value_goes_here = ""
     Content = st.text_area("label goes here", default_value_goes_here)
     result =""
     
     
-    # Display links
     data["label"] = label_enc.fit_transform(data[["label"]])  
       # when 'Predict' is clicked, make the prediction and store it 
     if st.button("Predict"): 
